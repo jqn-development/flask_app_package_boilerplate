@@ -44,7 +44,7 @@ deactivate, deativates the environment
 
 Clone the app from git
 
-`$ git  clone git@github.com:dealerslink/motorcloud.git . `
+`$ git  clone git@github.com: . `
 
 Install dependencies
 
