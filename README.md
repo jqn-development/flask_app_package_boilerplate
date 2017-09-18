@@ -2,7 +2,7 @@
 
 ## Installation - Mac OSX
 
-This README assumes you are using a Mac and that you are comfortable using the Terminal. The `$` indicates the command should be run in a Terminal window.
+This README assumes you are using a Mac and that you are comfortable using the Terminal and vi. The `$` indicates the command should be run in a Terminal window.
 
 ### virtualenv
 
@@ -44,7 +44,7 @@ deactivate, deativates the environment
 
 Clone the app from git
 
-`$ git  clone git@github.com: . `
+`$ git clone https://github.com/jqn/flask_app_package_boilerplate.git . `
 
 Install dependencies
 
@@ -52,12 +52,31 @@ Install dependencies
 
 Run the application
 
-`$ export FLASK_APP=app.py`
+`$ export FLASK_APP=flask_app`
+
+To enable debug mode
+
+`$ export FLASK_DEBUG=1`
 
 `$ flask run`
+
+### Quick Tips
 
 The previous command launches a simple built in server for local development. Head over to `http://127.0.0.1:5000/` where the app is running.
 
 To allow access from other networks run `$ flask run --host=0.0.0.0` this tells the OS to listen on all public IPs.
 
-To add your dependencies to the requirements.txt file run `$ pip freeze -r requirements.txt`
+To add your dependencies to the requirements.txt file run
+
+`$ touch requirements.txt`
+
+`$ pip freeze -r requirements.txt`
+
+To save you some typing when launching the server and to manage your db easier add the following to postactivate.
+
+`$ vi /Users/your-user/.virtualenvs/flask_app/bin/postactivate`
+
+```
+export FLASK_APP=flask_app
+export FLASK_ DEBUG=1
+```
